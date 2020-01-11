@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="7" total="8" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="29398" started-at="2020-01-11T14:30:08Z" finished-at="2020-01-11T14:30:37Z">
+    <groups>
+      <group name="shilpaWebTest">
+        <method signature="LoginTest.verifyInValidLoginNameTest()[pri:0, instance:com.orangehrm.git.test.LoginTest@68be2bc2]" name="verifyInValidLoginNameTest" class="com.orangehrm.git.test.LoginTest"/>
+      </group> <!-- shilpaWebTest -->
+    </groups>
+    <test name="Default test" duration-ms="29398" started-at="2020-01-11T14:30:08Z" finished-at="2020-01-11T14:30:37Z">
+      <class name="com.orangehrm.git.test.LoginTest">
+        <test-method status="PASS" signature="verifyInValidLoginNameTest()[pri:0, instance:com.orangehrm.git.test.LoginTest@68be2bc2]" name="verifyInValidLoginNameTest" duration-ms="27944" started-at="2020-01-11T14:30:08Z" description="Verify login with invalid login name  for error message" finished-at="2020-01-11T14:30:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInValidLoginNameTest -->
+      </class> <!-- com.orangehrm.git.test.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

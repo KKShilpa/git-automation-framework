@@ -52,8 +52,14 @@ public class GitLoginPage {
 	
 	public GitHomePage verifyWelcomeTextHomePage(String text)
 	{
+		System.out.println("Verifing home page Welcome text");
 		Assert.assertEquals(text,welcometext.getText(),"Miss match in Welcome Text");
-	
+		try {
+			Thread.sleep(30);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return new GitHomePage();
 	}
 	
