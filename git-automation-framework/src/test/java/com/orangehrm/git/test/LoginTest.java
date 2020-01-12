@@ -8,15 +8,17 @@ import com.orangehrm.git.pages.GitLoginPage;
 public class LoginTest extends GitBaseClass{
 	
 
-	@Test(enabled=true,groups ="shilpaWebTest",description = "Verify valid login details")
+	@Test(enabled=false,groups ="shilpaWebTest",description = "Verify valid login details")
 	public void verifyValidLoginTest()
 	{
 		GitLoginPage login = new GitLoginPage();
-		login.enterValidLoginDetails("Admin", "Admin123")
-				.verifyWelcomeTextHomePage("Welcome Admin");
+		login.isLoginPageLoaded()
+				.enterValidLoginDetails("Admin", "Admin123")
+					.verifyWelcomeTextHomePage("Welcome Admin")
+						.isHomePageLoaded();
 	}
 	
-	@Test(enabled=true,groups ="shilpaWebTest",description = "Verify login with invalid password for error message")
+	@Test(enabled=false,groups ="shilpaWebTest",description = "Verify login with invalid password for error message")
 	public void verifyInValidPasswordTest()
 	{
 		GitLoginPage login = new GitLoginPage();

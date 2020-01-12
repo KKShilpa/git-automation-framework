@@ -3,6 +3,8 @@ package com.orangehrm.git.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.orangehram.git.common.GitSeleniumWebDriverFactory;
@@ -38,6 +40,8 @@ public class GitLoginPage {
 	@FindBy(xpath = "//img[@alt = 'OrangeHRM on youtube']")
 	WebElement youtubeLogo;
 	
+	WebDriverWait wait = new WebDriverWait(GitSeleniumWebDriverFactory.getDriver(),30);
+	
 	public GitLoginPage()
 	{
 		PageFactory.initElements(GitSeleniumWebDriverFactory.getDriver(),this);
@@ -52,8 +56,14 @@ public class GitLoginPage {
 	
 	public GitHomePage verifyWelcomeTextHomePage(String text)
 	{
+		System.out.println("Verifing home page Welcome text");
 		Assert.assertEquals(text,welcometext.getText(),"Miss match in Welcome Text");
-	
+		try {
+			Thread.sleep(30);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return new GitHomePage();
 	}
 	
@@ -81,6 +91,12 @@ public class GitLoginPage {
 
 		return this;
 	}
-
+public GitLoginPage isLoginPageLoaded()
+{
+	wait.until(ExpectedConditions.elementToBeClickable(loginID));
+	wait.until(ExpectedConditions.elementToBeClickable(pass));
+	wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
+	return this;
+}
 
 }
